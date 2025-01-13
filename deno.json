@@ -1,0 +1,9 @@
+{
+  "name": "@borderless-im/steps",
+  "version": "0.0.0",
+  "exports": "./mod.ts",
+  "imports": {
+    "@std/fs": "jsr:@std/fs@^1.0.9",
+    "@std/path": "jsr:@std/path@^1.0.8"
+  }
+}
