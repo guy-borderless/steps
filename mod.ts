@@ -635,7 +635,3 @@ type StepParameters<
   TRunStepsFn extends typeof runSteps,
   TStepNumber extends number,
 > = Parameters<Parameters<TRunStepsFn>[TStepNumber][1]>[0];
-
-type TupleToRecord<T extends [string, any]> = {
-  [P in T as P[0]]: Extract<T, [P[0], any]>[1];
-};
