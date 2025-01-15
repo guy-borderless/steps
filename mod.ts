@@ -597,7 +597,9 @@ export function runSteps(...steps) {
             result = await stepFn(stepsResult);
           }
         } catch (e) {
-          console.error(`Error in calculating step: [${index}] ${stepName}`);
+          console.error(
+            `Error in calculating step ${index} - ${stepName}: ${e}`,
+          );
           throw e;
         }
         console.log(`[${index}] ${stepName} result calculated`);
