@@ -598,7 +598,9 @@ export function runSteps(...steps) {
           }
         } catch (e) {
           console.error(
-            `Error in calculating step ${index} - ${stepName}: ${e}`,
+            `Error in calculating step ${index} - ${stepName}: ${
+              e?.message || "propagating error"
+            }`,
           );
           throw e;
         }
