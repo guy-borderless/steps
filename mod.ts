@@ -10,14 +10,14 @@ type StepByStepOptions = {
   cacheDir: string;
 };
 
-function stepByStep<
+export function stepByStep<
   TInput extends object,
   TFn1 extends (ctx: TInput) => object,
 >(
   input: TInput,
   ...fns: [TFn1]
 ): (options: StepByStepOptions) => Promise<ReturnType<AccumFn<TFn1>>>;
-function stepByStep<
+export function stepByStep<
   TInput extends object,
   TFn1 extends (ctx: TInput) => object,
   TFn2 extends AccumFn<TFn1>,
@@ -25,7 +25,7 @@ function stepByStep<
   input: TInput,
   ...fns: [TFn1, TFn2]
 ): (options: StepByStepOptions) => Promise<ReturnType<AccumFn<TFn2>>>;
-function stepByStep<
+export function stepByStep<
   TInput extends object,
   TFn1 extends (ctx: TInput) => object,
   TFn2 extends AccumFn<TFn1>,
@@ -34,7 +34,67 @@ function stepByStep<
   input: TInput,
   ...fns: [TFn1, TFn2, TFn3]
 ): (options: StepByStepOptions) => Promise<ReturnType<AccumFn<TFn3>>>;
-function stepByStep(
+export function stepByStep<
+  TInput extends object,
+  TFn1 extends (ctx: TInput) => object,
+  TFn2 extends AccumFn<TFn1>,
+  TFn3 extends AccumFn<TFn2>,
+  TFn4 extends AccumFn<TFn3>,
+>(
+  input: TInput,
+  ...fns: [TFn1, TFn2, TFn3, TFn4]
+): (options: StepByStepOptions) => Promise<ReturnType<AccumFn<TFn4>>>;
+export function stepByStep<
+  TInput extends object,
+  TFn1 extends (ctx: TInput) => object,
+  TFn2 extends AccumFn<TFn1>,
+  TFn3 extends AccumFn<TFn2>,
+  TFn4 extends AccumFn<TFn3>,
+  TFn5 extends AccumFn<TFn4>,
+>(
+  input: TInput,
+  ...fns: [TFn1, TFn2, TFn3, TFn4, TFn5]
+): (options: StepByStepOptions) => Promise<ReturnType<AccumFn<TFn5>>>;
+export function stepByStep<
+  TInput extends object,
+  TFn1 extends (ctx: TInput) => object,
+  TFn2 extends AccumFn<TFn1>,
+  TFn3 extends AccumFn<TFn2>,
+  TFn4 extends AccumFn<TFn3>,
+  TFn5 extends AccumFn<TFn4>,
+  TFn6 extends AccumFn<TFn5>,
+>(
+  input: TInput,
+  ...fns: [TFn1, TFn2, TFn3, TFn4, TFn5, TFn6]
+): (options: StepByStepOptions) => Promise<ReturnType<AccumFn<TFn6>>>;
+export function stepByStep<
+  TInput extends object,
+  TFn1 extends (ctx: TInput) => object,
+  TFn2 extends AccumFn<TFn1>,
+  TFn3 extends AccumFn<TFn2>,
+  TFn4 extends AccumFn<TFn3>,
+  TFn5 extends AccumFn<TFn4>,
+  TFn6 extends AccumFn<TFn5>,
+  TFn7 extends AccumFn<TFn6>,
+>(
+  input: TInput,
+  ...fns: [TFn1, TFn2, TFn3, TFn4, TFn5, TFn6, TFn7]
+): (options: StepByStepOptions) => Promise<ReturnType<AccumFn<TFn7>>>;
+export function stepByStep<
+  TInput extends object,
+  TFn1 extends (ctx: TInput) => object,
+  TFn2 extends AccumFn<TFn1>,
+  TFn3 extends AccumFn<TFn2>,
+  TFn4 extends AccumFn<TFn3>,
+  TFn5 extends AccumFn<TFn4>,
+  TFn6 extends AccumFn<TFn5>,
+  TFn7 extends AccumFn<TFn6>,
+  TFn8 extends AccumFn<TFn7>,
+>(
+  input: TInput,
+  ...fns: [TFn1, TFn2, TFn3, TFn4, TFn5, TFn6, TFn7, TFn8]
+): (options: StepByStepOptions) => Promise<ReturnType<AccumFn<TFn8>>>;
+export function stepByStep(
   input: object,
   ...fns: ((ctx: any) => object | Promise<object>)[]
 ): (options: StepByStepOptions) => Promise<object> {
