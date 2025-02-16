@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "request": "launch",
+      "name": "deno: run active file",
+      "type": "node",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "/usr/bin/deno",
+      "runtimeArgs": [
+        "run",
+        "--allow-all",
+        "--inspect-brk",
+        "${relativeFileDirname}/${fileBasename}"
+      ],
+      "skipFiles": [
+        "<node_internals>/**", // skips Node.js internal files
+        "**/node_modules/**", // skips all files in node_modules
+        "!${workspaceFolder}/src/.*"
+      ],
+      "attachSimplePort": 9229
+    }
+  ]
+}

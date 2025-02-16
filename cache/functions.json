@@ -1,0 +1,5 @@
+[
+  "({ a })=>{\n    return {\n      b: 2\n    };\n  }",
+  "(ctx)=>{\n    return {\n      c: 3,\n      l: 2\n    };\n  }",
+  "function stepFour(ctx) {\n    return {\n      k: 4\n    };\n  }"
+]
